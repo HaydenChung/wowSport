@@ -1,0 +1,473 @@
+/* WOW sport general file*/
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+     background-color: white;
+     min-height:1000px;
+     line-height: 1.42857143;
+}
+
+.rows {
+    width:100%;
+}
+
+#nav_container {
+    position:fixed;
+    width:100%;
+    z-index:999;
+}
+
+#logo_container {
+    min-width:33%;
+    position:relative;
+    width: 80px;
+    height: 60px;
+    text-align: center;
+}
+
+#logo {
+    background: url('../image/logo_white.png') no-repeat center;
+    display:block;
+    text-decoration: none;
+    background-size:contain;
+    overflow:hidden;
+    /*position:absolute;*/
+    width: 80px;
+    height: 60px;
+    /*top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);*/
+}
+
+ul li {
+    list-style-type: none;
+}
+
+#navigation_bar {
+    position:relative;
+    bottom:20px;
+}
+
+#navigation_bar>li {
+    display:inline-block;
+}
+
+.nav_bar_row {
+    display:inline-block;
+    margin-top: 10px;
+}
+
+#nav_btn_container {
+    width:66%;
+    text-align: center;
+}
+
+.nav_button {
+    text-shadow:black 1px 1px;
+    display:inline-block;
+    cursor:pointer;
+    font-size:13px;
+    padding:5px 10px;
+    margin:5px 10px;
+    color:white;
+    transition: color 0.5s ease, border 0.2s ease;
+    border-bottom:transparent 2px solid;
+}
+
+.nav_button:hover {
+    color:lightgrey;
+    border-bottom: #c90021 2px solid;
+}
+
+@media (max-width: 750px) {
+    .nav_button {
+        padding:5px 5px;
+        margin:5px 5px;
+    }
+    #logo_container {
+    min-width:80px;
+    }
+    #nav_btn_container {
+    width:70%;
+    text-align: center;
+    }
+}
+
+#home {
+    background:url('../image/header-bg-only.jpg') no-repeat top center;
+    background-size:cover;
+
+    min-height:582px;
+    width:100%;
+    overflow:hidden;
+}
+
+#home_root {
+    margin-top:8%;
+    text-align: center;
+}
+
+#root_texts {
+    display:inline-block;
+    width:60%;
+}
+
+#headline {
+    color:white;
+    text-shadow:black 1px 1px 1px,black -1px -1px 1px, black 1px -1px 1px, black -1px 1px 1px;
+}
+
+#headline>img {
+    width:70%;
+    min-width:300px;
+    max-width:500px;
+}
+
+#headline>h1 {
+    font-size:30;
+    margin-top:-30px;
+}
+
+#root_showcase {
+    background:url('../image/iphone_main.png') top left no-repeat;
+    background-size:cover;
+    display:inline-block;
+    position:relative;
+    bottom:6rem;
+}
+
+@media (max-width: 750px) {
+    #root_showcase {
+        display: none; }
+    #root_texts {
+        margin-top:120px;
+        width:90%;
+    }
+    #headline>img{
+        width:100%
+    }
+}
+
+
+#root_showcase>div {
+    margin:35px;
+    position:relative;
+    top:40px;
+    left:-1px;
+    height:300px;
+
+}
+
+#root_showcase video {
+    height:250px;
+    width:150px;
+}
+
+.red_btn,.red_btn_no_redirect {
+    display:inline-block;
+    padding:10px 30px;
+    background-color:#c90021;
+    border-radius:6px;
+    cursor:pointer;
+    margin:5px 10px;
+    font-weight: bold;
+    color:white;
+    -webkit-appearance: none;
+}
+
+.red_btn:hover,.red_btn_no_redirect:hover {
+    filter: brightness(75%);
+}
+
+
+
+#home_floor {
+    width:100%;
+    background-color:rgba(0,0,0,0.5);
+    padding:10px 0 5px 0;
+    color: white;
+}
+
+.carousel_title {
+    font-size: 18px;
+    margin:10px 5px;
+}
+
+.carousel_title>span {
+    color:#c90021;
+}
+
+.carousel_container {
+        width: 95%;
+        height:226px;
+}
+
+.carousel_container .carousel_slide>img {
+    max-width:100%;
+    max-height:100%;
+    filter: brightness(65%);
+}
+
+.carousel_slide {
+        text-align: center;
+        font-size: 18px;
+        background: #000000;
+        width: 80%;
+        position:relative;
+}
+
+.carousel_slide .swiper_info {
+    position:absolute;
+    left:5px;
+    bottom:5px;
+}
+
+.swiper_info>div {
+    display:inline-block;
+}
+
+.swiper_info .uploader_pic>img {
+    border-radius:50%;
+    width:50px;
+    height:50px;
+    border:white 2px solid;
+}
+
+.swiper_info>div:not(.uploader_pic) {
+    text-align:left;
+}
+
+@media (max-width:750px){
+    .swiper_info>div:not(.uploader_pic) {
+        display:none;
+    }
+    .carousel_slide>img {
+        position:relative;
+    }
+    .carousel_container {
+        height:150px;
+    }
+}
+
+@media (min-width:751px) {
+    .carousel_slide>img{
+        position:absolute;
+        top:50%;
+        left:50%;
+        transform:translate(-50%,-50%);
+    }
+}
+
+#download {
+    text-align:center;
+    background-color:black;
+    color:white;
+}
+    
+#download>.rows>div {
+    display:inline-block;
+}
+
+#download p>span {
+    color:#c90021;
+}
+
+#app {
+    width:100%;
+    background-color:white;
+}
+
+.revolve_iphone {
+    display:inline-block;
+    width:33%;
+    vertical-align:top;
+    position:relative;
+    margin-top:30px;
+}
+
+.revolve_iphone:not([name="first_phone"]):before {
+    content:url('../image/arrow_gray.png');
+    position:absolute;
+    left:0;
+    top:250px;
+}
+
+.revolve_iphone img {
+    max-width:100%;
+    max-height:100%;
+}
+
+.red-dot {
+    background-color:#c90021;
+    border-radius:50%;
+    display:inline-block;
+    width:2.5rem;
+    height:2.5rem;
+    color:white;
+    text-align: center;
+    vertical-align: middle;
+    line-height:2.5rem;
+}
+
+.title-red {
+    color:#c90021;
+}
+
+@media (max-width:860px) {
+    .revolve_iphone {
+        display:block;
+        width:100%;
+    }
+    .revolve_iphone:not([name="first_phone"]):before {
+        left:50%;
+        top:-20px;
+        transform:rotate(90deg);
+    }
+}
+
+@media (max-width:750px) {
+    .revolve_iphone:before{
+        display:none;
+    }
+}
+
+#vision {
+    background:url('../image/bg_vision.jpg') center no-repeat;
+    background-size:cover;
+    position:relative;
+    color:white;
+    text-align: center;
+    padding:50px 18%;
+}
+
+#vision h2,#vision p {
+    margin:20px;
+}
+
+#vision h2 {
+    margin-top:40px;
+}
+
+.centering {
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+}
+
+#contact {
+    margin:10px 15%;
+}
+
+.container {
+    margin:10px 15%;
+}
+
+@media (max-width:1500px){
+    #contact,.container {
+        margin:10px 9%;
+    }
+}
+
+@media (max-width:1020px){
+    #contact,.container {
+        margin:10px 3%;
+    }
+}
+
+@media (max-width:750px){
+    #contact>div>div {
+        display:block;
+        width:100%;
+    }
+}
+
+@media (min-width:751px){
+    #contact>div>div {
+        display:inline-block;
+        width:49%;
+    }
+}
+
+#contact>div>div {
+    vertical-align:top;
+}
+
+#contact p {
+    color:grey;
+    font-size:0.5rem;
+    margin:0.1rem 0;
+}
+
+#contact h2 {
+    color:#c90021;
+}
+
+#contact h4 {
+    margin:0.2rem 0;
+}
+
+#contact .paragraph {
+    margin-top:20px;
+}
+
+#contact a {
+    text-decoration: underline;
+    color:grey;
+}
+
+#contact_us_form input[type="text"],#contact_us_form textarea {
+    width:70%;
+    border-radius: 4px;
+    transition: all .35s ease-in-out;
+    resize: none;
+    padding:5px;
+}
+
+#contact_us_form input[type="text"]:focus,#contact_us_form textarea:focus{
+    width:100%;
+}
+
+#contact .contact-p-red {
+    color:#c90021;
+}
+
+footer {
+    background-color:#c90021;
+    text-align:center;
+    padding:15px 0;
+}
+
+footer li{
+    display:inline;
+    font-size:10px;
+    margin:10px;
+}
+
+footer li>a{
+    color:white;
+    transition: color 0.5s ease;
+
+}
+
+footer li>a:hover{
+    color:lightgrey;
+}
+
+#bottom {
+    min-height:60px;
+    background:url('../image/bg_bottom.jpg')center no-repeat;
+    background-size:cover;    
+}
+
