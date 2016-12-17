@@ -337,18 +337,30 @@ ul li {
 }
 
 @media (max-width:750px) {
-    .revolve_iphone:before{
-        display:none;
+    .revolve_iphone:not([name="first_phone"]):before{
+        left:0;
+        top:250px;
+        transform:rotate(0deg);
     }
 }
 
+#app_footer {
+    height:10px;
+}
+
 #vision {
-    background:url('../image/bg_vision.jpg') center no-repeat;
-    background-size:cover;
+
     position:relative;
     color:white;
     text-align: center;
+
+    overflow:hidden;
+}
+
+#vision_bg {
+    background:url('../image/bg_vision.jpg') center no-repeat;
     padding:50px 18%;
+    /*background-size:cover;*/
 }
 
 #vision h2,#vision p {

@@ -14,6 +14,7 @@ var carousel = function() {
         });
     } else {
 
+        document.querySelector('#app').style.height = '800px';
         document.querySelector('#how-it-works').classList.add('swiper-container');
         document.querySelector('.how-it-works-wrapper').classList.add('swiper-wrapper');
         document.querySelectorAll('.revolve_iphone').forEach(function(value){
@@ -51,15 +52,23 @@ var resizeImg = function(source) {
 
 		if(naturalWidth/naturalHeight>targetWidth/targetHeight){
 			image.style.width = targetWidth+"px";
+            image.style.height = naturalHeight*(targetWidth/naturalWidth);
 		}else{
 			image.style.height = targetHeight+"px";
+            image.style.width = naturalWidth*(targetHeight/naturalHeight);
 		}
 	}
 }
 
 resizeImg('.swiper-slide>img');
 
-window.addEventListener('resize',function(){ resizeImg('.swiper-slide>img');});
+resizeTimer = 0;
+window.addEventListener('resize',function(){ 
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(
+        resizeImg.bind(null,'.swiper-slide>img'),500
+    )
+});
 
 
 var redBtn = function() {
@@ -70,18 +79,6 @@ var redBtn = function() {
         });
     }
 }();
-
-//this function currently only suitable for specified bg-image
-var parallaxScroll = function (parallaxBox){
-    var container = document.querySelector(parallaxBox);
-        var rect = {};
-    window.addEventListener('scroll',function(e){
-        rect = container.getBoundingClientRect();
-        if(rect.top-window.innerHeight <= 0 && rect.bottom >= 0){
-            container.style.backgroundPosition =  '0 ' + ((rect.top)*(0.1))+'px';
-        }
-    })
-}('#vision');
 
 var fadeInNav = function (nav,start,end) {
     var nav = document.querySelector(nav),
@@ -124,3 +121,33 @@ var navButton = function(time){
         });
     }
 }(500);
+
+var paraBox = function(element,extraScale,operator) {
+    this.operator = operator === '-' ? -1 : 1;
+    this.box = document.querySelector(element);
+    this.rect = box.getBoundingClientRect();
+    this.winHeight = window.innerHeight;
+    this.moveableSpace = (this.rect.height*extraScale)/2;
+    this.liftRatio = (moveableSpace)/this.winHeight;
+    this.box.style.backgroundSize = 'auto '+(this.rect.height*(1+extraScale))+'px';
+
+    window.addEventListener('scroll',function(){
+        this.rect = box.getBoundingClientRect();
+        if(this.rect.top-winHeight <= 0 && this.rect.bottom >= 0){
+            this.box.style.backgroundPositionY = this.operator * (((winHeight+this.rect.top)*this.liftRatio)-(this.moveableSpace))+'px';
+        }
+    });
+    this.timer = 0;
+    window.addEventListener('resize',function(){
+        clearTimeout(this.timer);
+        timer=setTimeout(function(){
+            this.winHeight = window.innerHeight;
+            this.moveableSpace = this.rect.height*extraScale;
+            this.liftRatio = (this.moveableSpace/2)/this.winHeight;
+            this.box.style.backgroundSize = 'auto '+(this.rect.height*(1+extraScale))+'px';
+        },500);
+
+    })
+}
+
+paraBox('#vision_bg',0.1,'-');
