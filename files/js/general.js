@@ -140,14 +140,16 @@ var paraBox = function(element,extraScale,operator) {
     this.timer = 0;
     window.addEventListener('resize',function(){
         clearTimeout(this.timer);
-        timer=setTimeout(function(){
+        this.timer=setTimeout(function(){
+            this.rect = box.getBoundingClientRect();
             this.winHeight = window.innerHeight;
             this.moveableSpace = this.rect.height*extraScale;
             this.liftRatio = (this.moveableSpace/2)/this.winHeight;
             this.box.style.backgroundSize = 'auto '+(this.rect.height*(1+extraScale))+'px';
+            this.box.style.backgroundPositionY = this.operator * (((winHeight+this.rect.top)*this.liftRatio)-(this.moveableSpace))+'px';
         },500);
 
     })
 }
 
-paraBox('#vision_bg',0.1,'-');
+paraBox('#vision_bg',0.1);
