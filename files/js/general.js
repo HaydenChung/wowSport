@@ -1,36 +1,4 @@
-// WOW sport general javascript file
-
-var carousel = function() {
-
-    if(window.innerWidth>750){
-        var swiper = new Swiper('.swiper-container:not(#how-it-works)', {
-            nextButton: '.swiper-button-next',
-            prevButton: '.swiper-button-prev',
-            slidesPerView: 3,
-            spaceBetween: 30,
-            loop: true,
-            autoplay: 2500,
-            autoplayDisableOnInteraction: true
-        });
-    } else {
-
-        document.querySelector('#app').style.height = '800px';
-        document.querySelector('#how-it-works').classList.add('swiper-container');
-        document.querySelector('.how-it-works-wrapper').classList.add('swiper-wrapper');
-        document.querySelectorAll('.revolve_iphone').forEach(function(value){
-            value.classList.add('swiper-slide');
-        });
-
-        var swiper = new Swiper('.swiper-container', {
-            nextButton: '.swiper-button-next',
-            prevButton: '.swiper-button-prev',
-            slidesPerView: 1,
-            loop: true,
-            autoplay: 2500,
-            autoplayDisableOnInteraction: true
-        });
-    }
-}();
+//WOW sport general javascript file
 
 var resizeImg = function(source) {
 	var img = typeof source == 'string' ? document.querySelectorAll(source) : source ;
@@ -50,7 +18,7 @@ var resizeImg = function(source) {
 			targetWidth = image.parentNode.clientWidth,
 			targetHeight = image.parentNode.clientHeight;
 
-		if(naturalWidth/naturalHeight>targetWidth/targetHeight){
+		if(naturalWidth/naturalHeight<targetWidth/targetHeight){
 			image.style.width = targetWidth+"px";
             image.style.height = naturalHeight*(targetWidth/naturalWidth);
 		}else{
@@ -60,7 +28,7 @@ var resizeImg = function(source) {
 	}
 }
 
-resizeImg('.swiper-slide>img');
+setTimeout(resizeImg.bind(null,'.swiper-slide>img'),300);
 
 resizeTimer = 0;
 window.addEventListener('resize',function(){ 
@@ -127,9 +95,10 @@ var paraBox = function(element,extraScale,operator) {
     this.box = document.querySelector(element);
     this.rect = box.getBoundingClientRect();
     this.winHeight = window.innerHeight;
-    this.moveableSpace = (this.rect.height*extraScale)/2;
-    this.liftRatio = (moveableSpace)/this.winHeight;
+    this.moveableSpace = this.rect.height*extraScale;
+    this.liftRatio = (moveableSpace/2)/this.winHeight;
     this.box.style.backgroundSize = 'auto '+(this.rect.height*(1+extraScale))+'px';
+    this.box.style.backgroundPositionY = this.operator * (((winHeight+this.rect.top)*this.liftRatio)-(this.moveableSpace))+'px';
 
     window.addEventListener('scroll',function(){
         this.rect = box.getBoundingClientRect();
@@ -152,4 +121,4 @@ var paraBox = function(element,extraScale,operator) {
     })
 }
 
-paraBox('#vision_bg',0.1);
+paraBox('#vision_bg',0.2);

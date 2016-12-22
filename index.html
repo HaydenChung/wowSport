@@ -14,7 +14,6 @@
 	
 	<link href="http://www.wowsport.io/css/index.css" rel="stylesheet">-->
 
-    <link href="./src/css/swiper.min.css" rel="stylesheet">
     <link href="./src/css/general.css" rel="stylesheet">
 
 	<!--<link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
@@ -81,10 +80,8 @@
                 <div id="root_texts">
                     <div id="headline">
                         <img src="./src/image/header-wow-top-of-title.png">
-                        <h1>Try me,everyone want to fight the odds.Just a nosebleed.</h1>
-                        <p>Leave me for a while</p>
-                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt.  </p>
-
+                        <h1>THE ULTIMATE SPORTS VIDEO CHAMPIONSHIPS</h1>
+                        <p>Join now to showcase your talents and see how you match up against the world.</p>
                         <span data-href="https://itunes.apple.com/app/wow-just-watch/id1109718207?mt=8" class="red_btn">iOS</span>
                         <span data-href="https://play.google.com/store/apps/details?id=com.wow.justwatch" class="red_btn">Android</span>
                     </div>
@@ -93,9 +90,12 @@
             <div id="home_floor">
                 <div class="container">
                     <h2 class="carousel_title">Notable <span>WOW SPORTS</span> Players</h2>
-                    <div class="swiper-container carousel_container">
-                        <div class="swiper-wrapper container_wrapper">
-                            <div class="swiper-slide carousel_slide">
+                    <div align="center" class="carousel_arrow" id="prevBtn">
+						<img src="./src/image/arrow_left.png" width="25" height="25">
+					</div>
+                    <div class="swipe-container carousel_container">
+                        <div class="swipe-wrapper container_wrapper">
+                            <div class="swipe_slide carousel_slide">
                                 <img src=".\src\gif\1.gif">
                                 <div class="swiper_info">
                                     <div class="uploader_pic">
@@ -108,7 +108,7 @@
                                 </div>
 
                             </div>
-                            <div class="swiper-slide carousel_slide">
+                            <div class="swipe_slide carousel_slide">
                                 <img src=".\src\gif\180.gif">
                                 <div class="swiper_info">
                                     <div class="uploader_pic">
@@ -120,7 +120,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="swiper-slide carousel_slide">
+                            <div class="swipe_slide carousel_slide">
                                 <img src=".\src\gif\286.gif">
                                 <div class="swiper_info">
                                     <div class="uploader_pic">
@@ -132,7 +132,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="swiper-slide carousel_slide">
+                            <div class="swipe_slide carousel_slide">
                                 <img src=".\src\gif\340.gif">
                                 <div class="swiper_info">
                                     <div class="uploader_pic">
@@ -144,7 +144,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="swiper-slide carousel_slide">
+                            <div class="swipe_slide carousel_slide">
                                 <img src=".\src\gif\59.gif">
                                 <div class="swiper_info">
                                     <div class="uploader_pic">
@@ -156,7 +156,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="swiper-slide carousel_slide">
+                            <div class="swipe_slide carousel_slide">
                                 <img src=".\src\gif\701.gif">
                                 <div class="swiper_info">
                                     <div class="uploader_pic">
@@ -169,10 +169,10 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="swiper-button-next"></div>
-                        <div class="swiper-button-prev"></div>
                     </div>
-
+                    <div align="center" class="carousel_arrow" id="nextBtn">
+						<img src="./src/image/arrow_right.png" width="25" height="25">
+					</div>
                 </div>
             </div>
         </div>
@@ -212,7 +212,7 @@
             </div>        
             <div id="how-it-works" class="rows">
                 <div class="how-it-works-wrapper">
-                    <div name="first_phone" class="revolve_iphone">
+                    <div name="first_phone" class="swipe_slide revolve_iphone">
                         <div>
                             <img  class="iphone" src="./src/image/iphone_1.png">
                         </div>
@@ -222,7 +222,7 @@
                             <p>Upload a short clip to showcase your sport skills, and compete against others with the same passion</p>
                         </div>
                     </div>
-                    <div class="revolve_iphone">
+                    <div class="swipe_slide revolve_iphone">
                         <div>
                             <img src="./src/image/iphone_2.png">
                         </div>
@@ -232,7 +232,7 @@
                             <p>Judge others as they will judge you</p>
                         </div>
                     </div>
-                    <div class="revolve_iphone">
+                    <div name="last_phone" class="swipe_slide revolve_iphone">
                         <div>
                             <img src="./src/image/iphone_3.png">
                         </div>
@@ -326,7 +326,7 @@
 
 
 </body>
-<script src="./files/libs/swiper.min.js"></script>
+<script src="./files/libs/swipe.min.js"></script>
 <script src="./files/js/general.js"></script>
 
 </html>
